@@ -1,9 +1,4 @@
 <p>
-  <b>Article:</b>
-  <%=h @comment.article_id %>
-</p>
-
-<p>
   <b>Poster name:</b>
   <%=h @comment.poster_name %>
 </p>
@@ -14,5 +9,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Edit', edit_article_comment_path(@article, @comment) %> |
+<%= link_to 'Back', articles_path %>

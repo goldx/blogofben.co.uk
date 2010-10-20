@@ -14,30 +14,30 @@ class ArticlesControllerTest < ActionController::TestCase
 
   test "should create article" do
     assert_difference('Article.count') do
-      post :create, :article => { }
+      post :create, :article => { :title => 'Title', :body => 'Some Body' }
     end
 
     assert_redirected_to article_path(assigns(:article))
   end
 
   test "should show article" do
-    get :show, :id => articles(:one).to_param
+    get :show, :id => articles(:valid).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => articles(:one).to_param
+    get :edit, :id => articles(:valid).to_param
     assert_response :success
   end
 
   test "should update article" do
-    put :update, :id => articles(:one).to_param, :article => { }
+    put :update, :id => articles(:valid).to_param, :article => { }
     assert_redirected_to article_path(assigns(:article))
   end
 
   test "should destroy article" do
     assert_difference('Article.count', -1) do
-      delete :destroy, :id => articles(:one).to_param
+      delete :destroy, :id => articles(:valid).to_param
     end
 
     assert_redirected_to articles_path

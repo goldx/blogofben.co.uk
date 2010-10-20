@@ -1,11 +1,23 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+valid:
   article_id: 1
-  poster_name: MyString
-  body: MyText
+  poster_name: Joe Blogs
+  body: My name is Joe Blogs and this is my comment
 
-two:
+article_error:
+  article_id:
+  poster_name: Joe Blogs
+  body: My name is Joe Blogs and this is my comment
+  
+poster_error:
   article_id: 1
-  poster_name: MyString
-  body: MyText
+  poster_name:
+  body: My name is Joe Blogs and this is my comment
+  
+body_error:
+  article_id: 1
+  poster_name: Joe Blogs
+  body:
+
+

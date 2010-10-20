@@ -1,45 +1,50 @@
 require 'test_helper'
 
 class CommentsControllerTest < ActionController::TestCase
+  
+  def setup
+    @article = articles(:valid)
+    @article.save
+  end
+  
   test "should get index" do
     get :index
-    assert_response :success
-    assert_not_nil assigns(:comments)
+    assert_redirected_to articles_path
   end
 
   test "should get new" do
-    get :new
+    get :new, :article_id => @article.id
     assert_response :success
   end
 
   test "should create comment" do
     assert_difference('Comment.count') do
-      post :create, :comment => { }
+      post :create, :artcile_id => @article.id, :comment => { :poster_name => 'Joe Blogs', :body => 'This is my comment' }
     end
 
-    assert_redirected_to comment_path(assigns(:comment))
+    assert_redirected_to article_path(@article)
   end
 
   test "should show comment" do
-    get :show, :id => comments(:one).to_param
+    get :show, :article_id => @article.id, :id => comments(:valid).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => comments(:one).to_param
+    get :edit, :article_id => @article.id, :id => comments(:valid).to_param
     assert_response :success
   end
 
   test "should update comment" do
-    put :update, :id => comments(:one).to_param, :comment => { }
-    assert_redirected_to comment_path(assigns(:comment))
+    put :update, :id => comments(:valid).to_param, :article_id => @article.id, :comment => { :body => 'Something different' }
+    assert_redirected_to article_path(@article)
   end
 
   test "should destroy comment" do
     assert_difference('Comment.count', -1) do
-      delete :destroy, :id => comments(:one).to_param
+      delete :destroy, :id => comments(:valid).to_param
     end
 
-    assert_redirected_to comments_path
+    assert_redirected_to articles_url
   end
 end

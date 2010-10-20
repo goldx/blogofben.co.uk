@@ -1,0 +1,14 @@
+<% form_for([@article, @comment]) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :poster_name %><br />
+    <%= f.text_field :poster_name %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>

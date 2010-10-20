@@ -1,9 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  title: MyString
-  body: MyText
+valid:
+  title: Article Title
+  body: Some text to form the body of the article.
 
-two:
-  title: MyString
-  body: MyText
+title_error:
+  title: 
+  body: No Title
+  
+body_error:
+  title: No Body
+  body:
