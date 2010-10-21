@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
   # POST /comments.xml
   def create
     @comment = Comment.new(params[:comment])
-    @article = Article.find(params[:artcile_id])
+    @article = Article.find(params[:article_id])
     @comment.article = @article
 
     respond_to do |format|
@@ -76,7 +76,7 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to(articles_url) }
+      format.html { redirect_to(article_path(Article.find(params[:article_id]))) }
       format.xml  { head :ok }
     end
   end

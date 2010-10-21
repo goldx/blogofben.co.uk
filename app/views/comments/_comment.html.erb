@@ -1,0 +1,13 @@
+<% div_for comment do %>
+<div id="comment-content">
+  <h1><%= comment.created_at.to_s(:long)%></h1>
+  <h1><%= comment.poster_name%> said</h1>
+  <p><%= comment.body %></p>
+  <% if user_signed_in? %>
+  <div class="comment-menu">
+    <%= link_to 'Edit', edit_article_comment_path(@article, comment) %>
+    <%= link_to 'Delete', [@article, comment], :method => :delete %>
+  </div>
+  <% end %>
+</div>
+<% end %>

@@ -13,7 +13,7 @@ module ArticlesHelper
       true
     elsif name == 'For Hire' && path == '/for_hire' 
       true
-    elsif name == 'Blog' && (path == '/articles' || path == '/')
+    elsif name == 'Blog' && (path =~ /.*articles.*/ || path == '/')
       true
     else
       false

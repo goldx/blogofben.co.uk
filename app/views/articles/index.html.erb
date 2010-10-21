@@ -1,6 +1,7 @@
-<div class="blog">
+<%= render :partial => 'app_menu' %>
 <%= render :partial => 'articles/title' %>
 <%= render :partial => 'articles/menu' %>
 <div class="content">
+<%= render :partial => 'article', :collection => @articles %>
 </div>
-</div>
+

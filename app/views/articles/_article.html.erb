@@ -1,0 +1,22 @@
+<% div_for article do %>
+  <div id="article_content">
+  
+  <a id="heading-link" href="<%= article_path(article) %>"><h1><%= h article.title %></h1></a>
+  
+  <h4><%= h article.created_at.to_s(:long) %></h4>
+  
+  <div id="article-body"><p><%= article.body %></p></div>
+  
+  <div class="comment-options">
+    <%= link_to 'Show Comments', article_path(article) %> | 
+    <%= link_to 'Add Comment', new_article_comment_path(article) %>
+  </div>
+  
+  <% if user_signed_in? %>
+    <div class="article-menu">
+      <%= link_to 'Edit', edit_article_path(article) %> | 
+      <%= link_to 'Destroy', article, :method => :delete %>
+    </div>
+  <% end %>
+  </div>
+<% end %>

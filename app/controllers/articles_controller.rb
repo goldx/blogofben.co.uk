@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+before_filter :authenticate_user!, :except => [ :index, :show ]
+
   # GET /articles
   # GET /articles.xml
   def index
@@ -14,7 +16,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1.xml
   def show
     @article = Article.find(params[:id])
-
+    @comments = @article.comments
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @article }

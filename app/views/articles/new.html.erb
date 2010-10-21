@@ -1,19 +1,13 @@
-<h1>New article</h1>
+<div class="blog">
+<%= render :partial => 'app_menu' %>
+<%= render :partial => 'title' %>
+<%= render :partial => 'menu' %>
+<div class="content">
+  <div class="article-form">
+  <h1>New article</h1>
 
-<% form_for(@article) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', articles_path %>
+  <%= render :partial => 'article_form' %>
+  <%= link_to 'Back', articles_path %>
+  </div>
+</div>
+</div>

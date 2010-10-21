@@ -1,2 +1,16 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+// jQuery
+
+jQuery.ajaxSetup({ 
+  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+});
+
+jQuery(function() {
+  
+  $('.article #article_content').append('<div class="comments" style="hidden"></div>');
+  
+  $(".show-comment-link").click(function(e) {
+    $.get(this.href, null, null, "script");
+    return false;
+  })
+  
+});

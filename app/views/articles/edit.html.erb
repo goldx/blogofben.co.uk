@@ -1,20 +1,15 @@
-<h1>Editing article</h1>
+<div class="blog">
+<%= render :partial => 'app_menu' %>
+<%= render :partial => 'title' %>
+<%= render :partial => 'menu' %>
+<div class="content">
+  <div class="article-form">
+  <h1>Editing article</h1>
 
-<% form_for(@article) do |f| %>
-  <%= f.error_messages %>
+  <%= render :partial => "article_form" %>
 
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
+  <%= link_to 'Show', @article %> |
+  <%= link_to 'Back', articles_path %>
+  </div>
+</div>
+</div>

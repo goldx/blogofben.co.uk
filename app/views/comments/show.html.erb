@@ -1,13 +1,19 @@
-<p>
-  <b>Poster name:</b>
-  <%=h @comment.poster_name %>
-</p>
+<%= render :partial => 'articles/title' %>
+<%= render :partial => 'articles/menu' %>
+<div class="blog">
+  <div class="content">
+  <p>
+    <b>Poster name:</b>
+    <%=h @comment.poster_name %>
+  </p>
 
-<p>
-  <b>Body:</b>
-  <%=h @comment.body %>
-</p>
+  <p>
+    <b>Body:</b>
+    <%=h @comment.body %>
+  </p>
 
 
-<%= link_to 'Edit', edit_article_comment_path(@article, @comment) %> |
-<%= link_to 'Back', articles_path %>
+  <%= link_to 'Edit', edit_article_comment_path(@article, @comment) %> |
+  <%= link_to 'Back', articles_path %>
+  </div>
+</div>

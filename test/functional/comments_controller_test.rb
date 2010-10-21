@@ -19,7 +19,7 @@ class CommentsControllerTest < ActionController::TestCase
 
   test "should create comment" do
     assert_difference('Comment.count') do
-      post :create, :artcile_id => @article.id, :comment => { :poster_name => 'Joe Blogs', :body => 'This is my comment' }
+      post :create, :article_id => @article.id, :comment => { :poster_name => 'Joe Blogs', :body => 'This is my comment' }
     end
 
     assert_redirected_to article_path(@article)
@@ -42,9 +42,9 @@ class CommentsControllerTest < ActionController::TestCase
 
   test "should destroy comment" do
     assert_difference('Comment.count', -1) do
-      delete :destroy, :id => comments(:valid).to_param
+      delete :destroy, :id => comments(:valid).to_param, :article_id => @article.id
     end
 
-    assert_redirected_to articles_url
+    assert_redirected_to article_path(@article)
   end
 end
