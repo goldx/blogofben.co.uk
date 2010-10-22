@@ -3,7 +3,7 @@ module ArticlesHelper
     if current_page?(name, current_path)
       'id = "current"'
     else
-      'id = "menu-link"'
+      ''
     end
   end
   

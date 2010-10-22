@@ -1,11 +1,11 @@
 <% div_for article do %>
-  <div id="article_content">
+  <div class="article_content">
   
-  <a id="heading-link" href="<%= article_path(article) %>"><h1><%= h article.title %></h1></a>
+  <a class="heading-link" href="<%= article_path(article) %>"><h1><%= h article.title %></h1></a>
   
   <h4><%= h article.created_at.to_s(:long) %></h4>
   
-  <div id="article-body"><p><%= article.body %></p></div>
+  <div class="article-body"><p><%= article.body %></p></div>
   
   <div class="comment-options">
     <%= link_to 'Show Comments', article_path(article), :id => "#{article.id}", :class => 'show-comment-link'%> | 
