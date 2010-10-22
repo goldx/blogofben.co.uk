@@ -1,9 +1,9 @@
 module ArticlesHelper
-  def menu_link_to(name, link_path, current_path)
+  def link_id(name, current_path)
     if current_page?(name, current_path)
-      link_to name, link_path, :id => 'current'
+      'id = "current"'
     else
-      link_to name, link_path
+      'id = "menu-link"'
     end
   end
   

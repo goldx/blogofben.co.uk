@@ -6,7 +6,7 @@
   <% if user_signed_in? %>
   <div class="comment-menu">
     <%= link_to 'Edit', edit_article_comment_path(@article, comment) %>
-    <%= link_to 'Delete', [@article, comment], :method => :delete %>
+    <%= link_to 'Delete', [@article, comment], :confirm => "Are you sure?", :method => :delete %>
   </div>
   <% end %>
 </div>

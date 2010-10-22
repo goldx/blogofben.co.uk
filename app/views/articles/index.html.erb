@@ -2,6 +2,7 @@
 <%= render :partial => 'articles/title' %>
 <%= render :partial => 'articles/menu' %>
 <div class="content">
+<div id="notice"><%= notice %></div>
 <%= render :partial => 'article', :collection => @articles %>
 </div>
 

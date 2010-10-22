@@ -1,0 +1,25 @@
+/* get the relivant article id */
+var id = <%= @article.id %>;
+
+
+
+if ($('#article_'+id+' .comments').is(':hidden')) {
+  /* If the comments are hidden, add them and display them */
+  /* Append comments to commments div */
+  $('#article_'+id+' .comments').html(
+                  "<%= escape_javascript(render :partial => 'comments/comment', :collection => @comments) %>");
+                  
+  /* .comments is hidden, slide it in */
+  $('#article_'+id+' .comments').slideDown();
+  
+  /* Also change the link text */
+  $('#'+id).html('Hide Comments');
+} else {
+  /* Otherwise, slideup and remove them! */
+  $('#article_'+id+' .comments').slideUp('slow', function() {
+    $(this).html('');
+  });
+  
+  /* Change the link text again */
+  $('#'+id).html('Show Comments');
+}

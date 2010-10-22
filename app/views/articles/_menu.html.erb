@@ -1,7 +1,7 @@
 <div class="main-menu">
 <ul>
-  <li><%= menu_link_to 'Ben', ben_path, request.path %></li>
-  <li><%= menu_link_to 'Blog', articles_path, request.path %></li>
-  <li><%= menu_link_to 'For Hire', hire_path, request.path %></li>
+  <li><div <%= link_id('Ben', request.path) %> ><%= link_to 'Ben', ben_path %></div></li>
+  <li><div <%= link_id('Blog', request.path) %>><%= link_to 'Blog', articles_path %></div></li>
+  <li><div <%= link_id('For Hire', request.path) %>><%= link_to 'For Hire', hire_path %></div></li>
 </ul>
 </div>

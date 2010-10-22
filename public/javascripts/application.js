@@ -6,7 +6,7 @@ jQuery.ajaxSetup({
 
 jQuery(function() {
   
-  $('.article #article_content').append('<div class="comments" style="hidden"></div>');
+  $('.article #article_content').append('<div class="comments" style="display: none;"></div>');
   
   $(".show-comment-link").click(function(e) {
     $.get(this.href, null, null, "script");

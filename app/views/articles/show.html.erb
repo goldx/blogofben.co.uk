@@ -1,8 +1,9 @@
-<div class="blog">
+
   <%= render :partial => 'app_menu' %>
   <%= render :partial => 'title' %>
   <%= render :partial => 'menu' %>
   <div class="content">
+  <div class="article">
     <div id="notice"><%= notice %></div>
     <h1><%= h @article.title %></h1>
     <h4><%= h @article.created_at.to_s(:long) %></h4> 
@@ -15,13 +16,15 @@
       <%= link_to 'Add Comment', new_article_comment_path(@article) %>
     </div>
     
-    <% if user_signed_in? %>
+    
     <div class="article-menu">
+    <% if user_signed_in? %>
       <%= link_to 'Edit', edit_article_path(@article) %> |
+    <% end %>
       <%= link_to 'Back', articles_path %>
     </div>
-    <% end %>
     
     <%= render :partial => 'comments/comment', :collection => @comments %>
+    </div>
   </div>
-</div>
+

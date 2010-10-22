@@ -4,7 +4,7 @@ before_filter :authenticate_user!, :except => [ :index, :show ]
   # GET /articles
   # GET /articles.xml
   def index
-    @articles = Article.all
+    @articles = Article.all.reverse
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,6 +20,7 @@ before_filter :authenticate_user!, :except => [ :index, :show ]
     
     respond_to do |format|
       format.html # show.html.erb
+      format.js
       format.xml  { render :xml => @article }
     end
   end
