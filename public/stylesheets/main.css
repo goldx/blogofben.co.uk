@@ -194,7 +194,6 @@ a:hover { color: #fff; text-decoration: none; }
   position: relative;
   width: 74%;
   min-height: 768px;
-  float: left;
   background: #1f1f1f;
   border-radius: 10px;
   -moz-border-radius: 10px;
@@ -268,4 +267,16 @@ a:hover { color: #fff; text-decoration: none; }
 
 .comment-content {
   padding: 10px;
+}
+
+.comment-form {
+  width: 75%;
+}
+
+.form-wrapper {
+  padding: 10px;
+}
+
+.article > .comment-form {
+  display: none;
 }

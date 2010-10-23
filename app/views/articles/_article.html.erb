@@ -8,8 +8,7 @@
   <div class="article-body"><p><%= article.body %></p></div>
   
   <div class="comment-options">
-    <%= link_to 'Show Comments', article_path(article), :id => "#{article.id}", :class => 'show-comment-link'%> | 
-    <%= link_to 'Add Comment', new_article_comment_path(article) %>
+    <%= link_to 'Show Comments', article_path(article), :id => "#{article.id}", :class => 'show-comment-link'%>
   </div>
   
   <% if user_signed_in? %>

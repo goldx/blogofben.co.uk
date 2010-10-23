@@ -45,6 +45,7 @@ class CommentsController < ApplicationController
       if @comment.save
         format.html { redirect_to(@article, :notice => 'Comment was successfully created.') }
         format.xml  { render :xml => @article, :status => :created, :location => @article }
+        format.js
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }

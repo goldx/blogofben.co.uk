@@ -13,4 +13,9 @@ jQuery(function() {
     return false;
   })
   
+  $('#new_comment').live("submit", function(e) {
+    $.post($(this).attr("action"), $(this).serialize(), null, "script");
+    return false;
+  })
+  
 });

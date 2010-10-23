@@ -8,14 +8,20 @@ if ($('#article_'+id+' .comments').is(':hidden')) {
   /* Append comments to commments div */
   $('#article_'+id+' .comments').html(
                   "<%= escape_javascript(render :partial => 'comments/comment', :collection => @comments) %>");
+  $('#article_'+id).append(
+                  "<%= escape_javascript(render :partial => 'comments/comments_form_compact') %>");             
                   
   /* .comments is hidden, slide it in */
-  $('#article_'+id+' .comments').slideDown();
+  $('#article_'+id+' .comments').slideDown('slow');
+  $('#form_'+id).slideDown('slow');
   
   /* Also change the link text */
   $('#'+id).html('Hide Comments');
 } else {
   /* Otherwise, slideup and remove them! */
+  $('#form_'+id).slideUp('slow', function() {
+    $(this).remove();
+  });
   $('#article_'+id+' .comments').slideUp('slow', function() {
     $(this).html('');
   });

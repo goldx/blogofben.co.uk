@@ -17,6 +17,7 @@ before_filter :authenticate_user!, :except => [ :index, :show ]
   def show
     @article = Article.find(params[:id])
     @comments = @article.comments
+    @comment = Comment.new
     
     respond_to do |format|
       format.html # show.html.erb
