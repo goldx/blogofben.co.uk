@@ -5,7 +5,7 @@
   
   <h4><%= h article.created_at.to_s(:long) %></h4>
   
-  <div class="article-body"><p><%= article.body %></p></div>
+  <div class="article-body"><p><%= textilize(coderay(article.body)) %></p></div>
   
   <div class="comment-options">
     <%= link_to 'Show Comments', article_path(article), :id => "#{article.id}", :class => 'show-comment-link'%>

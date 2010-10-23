@@ -14,8 +14,11 @@ Rails::Initializer.run do |config|
   # Add additional load paths for your own custom dirs
   # config.autoload_paths += %W( #{RAILS_ROOT}/extras )
 
+  
   config.gem 'warden'
   config.gem 'devise', :version => '1.0.8'
+  config.gem 'RedCloth'
+  config.gem 'coderay'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

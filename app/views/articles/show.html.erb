@@ -9,7 +9,7 @@
     <h4><%= h @article.created_at.to_s(:long) %></h4> 
 
     <p>
-    <%=h @article.body %>
+    <%= textilize(coderay(@article.body)) %>
     </p>
 
     <div class="comment-options">
