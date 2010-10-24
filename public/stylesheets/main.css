@@ -35,6 +35,11 @@ a h1 {
 a { color: #fff; font-size: 0.8em; }
 a:hover { color: #fff; text-decoration: none; }
 
+img {
+  padding: 0;
+  margin: 0;
+}
+
 .fieldWithErrors {
   padding: 2px;
   background-color: red;
@@ -88,8 +93,8 @@ a:hover { color: #fff; text-decoration: none; }
 
 #title {
   position: relative;
-  top: 20px;
-  left: 40px;
+  height: 120px;
+  left: 20px;
 }
 
 /************
@@ -179,7 +184,6 @@ a:hover { color: #fff; text-decoration: none; }
 }
 
 .title-area {
-  height: 100px;
   width: 100%;
 }
 
@@ -205,9 +209,21 @@ a:hover { color: #fff; text-decoration: none; }
   text-align: center;
 }
 
+#find-by-month {
+  float: right;
+  height: 100%;
+  width: 20%;
+  padding: 20px 0px;
+  text-align: right;
+}
+
 /************
  * Articles *
  ************/
+
+#articles {
+  width: 75%;
+}
 
 .comments {
   position: relative;

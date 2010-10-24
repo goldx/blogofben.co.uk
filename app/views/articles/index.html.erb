@@ -3,6 +3,12 @@
 <%= render :partial => 'articles/menu' %>
 <div class="content">
 <div id="notice"><%= notice %></div>
-<%= render :partial => 'article', :collection => @articles %>
+<div id="find-by-month">
+  <%= link_to 'All Articles', articles_path %><br />
+  <%= select_by_month %>
+</div>
+<div id="articles">
+  <%= render :partial => 'article', :collection => @articles %>
+</div>
 </div>
 
