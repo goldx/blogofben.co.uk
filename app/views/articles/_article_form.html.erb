@@ -10,6 +10,9 @@
     <%= f.text_area :body %>
   </p>
   <p>
+    <%= f.label 'Tags' %><br />
+    <%= f.text_field :tags_string %> 
+  <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>
