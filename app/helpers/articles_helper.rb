@@ -16,7 +16,7 @@ module ArticlesHelper
   def current_page?(name, path)
     if name == 'Ben' && path == '/ben'
       true
-    elsif name == 'For Hire' && path == '/for_hire' 
+    elsif name == 'Projects' && path == '/for_hire' 
       true
     elsif name == 'Blog' && (path =~ /.*articles.*/ || path == '/')
       true
